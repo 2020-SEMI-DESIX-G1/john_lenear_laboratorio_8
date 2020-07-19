@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Laboratorio_8
+    body
+        h1 Estudiantes
+        form(method="post")
+            label(for="nombre") Nombre: 
+            input(name="nombre", type="text")
+            br
+            label(for="edad") Edad: 
+            input(name="edad", type="text")
+            br
+            button(type="submit") Guardar
+        table
+            thead
+                th Nombre
+                th Edad
+            tbody
+                each estudiante in estudiantes
+                    tr
+                        td 
+                            a(href='/estudiantes/' + estudiante._id) #{estudiante.nombre}
+                        td #{estudiante.edad}
