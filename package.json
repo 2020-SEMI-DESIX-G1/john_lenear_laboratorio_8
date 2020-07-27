@@ -5,9 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "mongo:start": "docker run --rm -v /data/db -p=27017:27017 --env-file=./.env --name=lab8-db -d centos/mongodb-32-centos7",
+    "mongo:start": "docker run -v=mongo-data:/data/db --rm -p=27017:27017 --env-file=./.env --name=lab8-db -d centos/mongodb-32-centos7",
     "mongo:stop": "docker stop lab8-db",
     "dev": "npm run mongo:start && nodemon app.js",
+    "john": "sudo docker-compose up -d && nodemon app.js",
+    "dev1": "npm run mongo:start && nodemon app.js && docker-compose up -d",
     "start": "node app.js"
   },
   "keywords": [],
