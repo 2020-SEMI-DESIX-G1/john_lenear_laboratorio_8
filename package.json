@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "mongo:start": "docker run --rm -p=27017:27017 --env-file=./.env --name=dessoftix--lab6--mongo -d centos/mongodb-32-centos7",
-    "mongo:stop": "docker stop dessoftix--lab6--mongo",
+    "mongo:start": "docker run --rm -v /data/db -p=27017:27017 --env-file=./.env --name=lab8-db -d centos/mongodb-32-centos7",
+    "mongo:stop": "docker stop lab8-db",
     "dev": "npm run mongo:start && nodemon app.js",
     "start": "node app.js"
   },
